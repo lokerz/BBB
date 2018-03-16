@@ -39,7 +39,7 @@ public class JumpTrigger : MonoBehaviour {
 		}
 	}
 	void boxUp (GameObject hero){
-		hero.GetComponent<Rigidbody> ().AddForce (hero.transform.up * 750);
+		hero.GetComponent<Rigidbody> ().AddForce (hero.transform.up * 800);
 		boxSpring = true;
 	}
 	void boxDown(){
