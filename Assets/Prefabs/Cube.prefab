@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 65893702976866496}
   - component: {fileID: 23707515993949888}
   - component: {fileID: 65020575155642440}
-  - component: {fileID: 114074189071939338}
+  - component: {fileID: 114404219569425874}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1141073237984362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.73491, y: 3.712615, z: 25.70238}
-  m_LocalScale: {x: 1.95, y: 4, z: 1.95}
+  m_LocalScale: {x: 1.95, y: 10, z: 1.95}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,13 +101,13 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141073237984362}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ce5bb68f771abd54bad4833283d33ce4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.025, y: 1, z: 1.025}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114074189071939338
+--- !u!114 &114404219569425874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -115,7 +115,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1141073237984362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703f0527cd42ed34a84c774e6c739e9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 355b0d6126748ec48abb92220dd6e2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 5
+  isDown: 0
