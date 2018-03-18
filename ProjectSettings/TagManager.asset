@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hero
   - Floor
+  - Boss
   layers:
   - Default
   - TransparentFX

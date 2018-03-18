@@ -6,10 +6,12 @@ public class CharController : MonoBehaviour {
 
 	private float x, z;
 	private Rigidbody player;
-	private bool isGrounded;
+	private bool isGrounded = false;
+	private float timer;
 
 	public float speed;
 	public float jumpForce;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,14 +27,23 @@ public class CharController : MonoBehaviour {
 
 		//Jump
 		if (Input.GetKeyDown ("space") && isGrounded) {
-			player.AddForce (transform.up * jumpForce, ForceMode.Impulse);
 			isGrounded = false;
+			player.AddForce (transform.up * jumpForce, ForceMode.Impulse);
 		}
+
+		Debug.Log (isGrounded);
 	}
-		
+
 	void OnCollisionEnter(Collision other){
 		if(other.collider.tag == "Floor")
 			isGrounded = true;
 	}
+
+	void OnColliderExit(Collider other){
+		if(other.tag == "Floor")
+			isGrounded = false;
+	}
+
+
 
 }

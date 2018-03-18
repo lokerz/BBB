@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 
-		transform.position = player.transform.position + new Vector3(0,1f,-3.5f);
+		transform.position = player.transform.position + new Vector3(0,2f,-5.5f);
 		offset = player.transform.position - transform.position;
 	
 	}
@@ -23,9 +23,9 @@ public class CameraController : MonoBehaviour {
 		float angle = player.transform.eulerAngles.y;
 		Quaternion rotation = Quaternion.Euler (0, angle, 0);
 
-		transform.position = player.transform.position - (rotation*offset) + new Vector3(0,1f,0);
+		transform.position = player.transform.position - (rotation*offset);
 		transform.LookAt(player.transform);
-		transform.rotation *= Quaternion.Euler(-30,0,0);
+		transform.rotation *= Quaternion.Euler(-20,0,0);
 	
 
 		float mouseX = Input.GetAxis("Mouse X");

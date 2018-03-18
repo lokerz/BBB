@@ -40,7 +40,6 @@ public class TerrainManager : MonoBehaviour {
 			}
 			o++;
 		}
-		Debug.Log (timer);
 	}
 
 	public void addTower(){
