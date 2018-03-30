@@ -6,11 +6,13 @@ public class CharController : MonoBehaviour {
 
 	private float x, z;
 	private Rigidbody player;
-	private bool isGrounded = false;
 	private float timer;
+	public bool isGrounded = false;
+
 
 	public float speed;
 	public float jumpForce;
+	public GameObject skill1Bullet;
 
 
 	// Use this for initialization
@@ -29,6 +31,11 @@ public class CharController : MonoBehaviour {
 		if (Input.GetKeyDown ("space") && isGrounded) {
 			isGrounded = false;
 			player.AddForce (transform.up * jumpForce, ForceMode.Impulse);
+		}
+
+		if (Input.GetKeyDown ("1")) {
+			Vector3 bulletpos = new Vector3 (transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 2);
+			Instantiate (skill1Bullet, bulletpos, Quaternion.identity);
 		}
 
 		Debug.Log (isGrounded);

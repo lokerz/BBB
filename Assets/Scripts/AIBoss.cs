@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class AIBoss : MonoBehaviour {
 	
-	private float x, z, temp1, temp2;
+	private float x, z;
 	private Rigidbody boss;
 	private bool isGrounded;
 
 	private Collider skill1Trigger;
-	private bool skill1TriggerExpand = false;
-	private bool heroJumped = false;
+
 
 	public float speed;
 	public float turnSpeed;
@@ -20,32 +19,20 @@ public class AIBoss : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		boss = GetComponent<Rigidbody> ();
-		temp1 = speed;
-		temp2 = turnSpeed;
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		moveToPlayer ();
 
-		if (Input.GetKeyDown ("1")) {
+		if (Input.GetKeyDown ("f1")) {
 			boss.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 			Invoke("skill1",0.7f);
 			//skill1();
 		}
 
-		if (skill1TriggerExpand) {
-			if (GetComponent<SphereCollider> ().radius <= 5)
-				GetComponent<SphereCollider> ().radius += 1f * Time.deltaTime;
-			else{
-				skill1TriggerExpand = false;
-				GetComponent<SphereCollider>().radius = 0.5f;
-				GetComponent<SphereCollider> ().enabled = false;
-				heroJumped = false;
-				speed = temp1;
-				turnSpeed = temp2;
-			}
-		}
+	
 	}
 
 	void moveToPlayer(){
@@ -56,26 +43,12 @@ public class AIBoss : MonoBehaviour {
 		transform.Translate(0, 0, Time.deltaTime * speed);
 	}
 
-	void skill1(){
-		//Ground Smash Attack
-		if (isGrounded) {
-			gameObject.GetComponent<SphereCollider> ().enabled = true;
-			GetComponent<SphereCollider> ().radius = 0.5f;
-			skill1TriggerExpand = true;
-
-			speed = 0;
-			turnSpeed = 0;
-		}
-	}
-
-	void OnTriggerEnter(Collider other){
-		if (other.tag == "Floor")
-			other.GetComponent<TerrainMovement> ().boxUp ();
-	}
-
 	void OnCollisionEnter(Collision other){
 		if(other.collider.tag == "Floor")
 			isGrounded = true;
 	}
-		
+
+	void skill1(){
+		GetComponentInChildren<Skill1Boss> ().skill1 ();
+	}
 }

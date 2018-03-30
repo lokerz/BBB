@@ -51,12 +51,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AIBoss.cs" />
+     <Compile Include="Assets\Scripts\AIBoss.cs" />
+     <Compile Include="Assets\Scripts\BulletControl.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CharController.cs" />
+     <Compile Include="Assets\Scripts\Skill1Boss.cs" />
      <Compile Include="Assets\Scripts\TerrainManager.cs" />
      <Compile Include="Assets\Scripts\TerrainMovement.cs" />
-     <Compile Include="Assets\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\TimeManager.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>D:/Unity Project/BBB/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

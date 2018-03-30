@@ -108,6 +108,59 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &88427263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 88427264}
+  - component: {fileID: 88427266}
+  - component: {fileID: 88427265}
+  m_Layer: 0
+  m_Name: Skill1Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88427264
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88427263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2064807622}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &88427265
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88427263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &88427266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88427263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fb770a8687c88429b8ef7d7f6072a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &110386205
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,8 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9615d7b88d2b64fa4a5702ec6a9179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrounded: 0
   speed: 7
   jumpForce: 400
+  skill1Bullet: {fileID: 1070765917859178, guid: 9f0ce32436cc6784f9275cf114ab03a1,
+    type: 2}
 --- !u!65 &1440249655
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -744,7 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floor: {fileID: 1141073237984362, guid: 925c637cb340b884d98cb95085abfeff, type: 2}
   boxLength: 2
-  boxCount: 30
+  boxCount: 50
   towerPercentage: 2
   fallCount: 45
   fallTimer: 30
@@ -778,7 +834,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 20, z: 10}
   m_LocalScale: {x: 5, y: 10, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 88427264}
   m_Father: {fileID: 567597762}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
