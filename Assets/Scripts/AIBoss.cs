@@ -9,7 +9,7 @@ public class AIBoss : MonoBehaviour {
 	private bool isGrounded;
 
 	private Collider skill1Trigger;
-
+	private Animator anim;
 
 	public float speed;
 	public float turnSpeed;
@@ -19,7 +19,7 @@ public class AIBoss : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		boss = GetComponent<Rigidbody> ();
-
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -27,9 +27,7 @@ public class AIBoss : MonoBehaviour {
 		moveToPlayer ();
 
 		if (Input.GetKeyDown ("f1")) {
-			boss.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-			Invoke("skill1",0.7f);
-			//skill1();
+			anim.SetBool ("isSlam", true);
 		}
 
 	
@@ -48,7 +46,12 @@ public class AIBoss : MonoBehaviour {
 			isGrounded = true;
 	}
 
-	void skill1(){
+	void jump(){
+		boss.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+	}
+
+	public void skill1(){
+		Debug.Log ("Skill 1");
 		GetComponentInChildren<Skill1Boss> ().skill1 ();
 	}
 }

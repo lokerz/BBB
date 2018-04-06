@@ -6,6 +6,7 @@ public class Skill1Boss : MonoBehaviour {
 	private float temp1, temp2;
 	private bool skill1TriggerExpand = false;
 	private bool heroJumped = false;
+	//public Animator anim;
 	// Use this for initialization
 	void Start () {
 		temp1 = GetComponentInParent<AIBoss>().speed;
@@ -22,6 +23,7 @@ public class Skill1Boss : MonoBehaviour {
 				GetComponent<SphereCollider>().radius = 0.5f;
 				GetComponent<SphereCollider> ().enabled = false;
 				heroJumped = false;
+				gameObject.GetComponentInParent<Animator> ().SetBool ("isSlam", false);
 				GetComponentInParent<AIBoss>().speed = temp1;
 				GetComponentInParent<AIBoss>().turnSpeed = temp2;
 			}
@@ -31,10 +33,10 @@ public class Skill1Boss : MonoBehaviour {
 		//Ground Smash Attack
 		gameObject.GetComponent<SphereCollider> ().enabled = true;
 		GetComponent<SphereCollider> ().radius = 0.5f;
-		skill1TriggerExpand = true;
-
 		GetComponentInParent<AIBoss>().speed = 0;
 		GetComponentInParent<AIBoss>().turnSpeed = 0;
+
+		skill1TriggerExpand = true;
 	}
 
 	void OnTriggerEnter(Collider other){
