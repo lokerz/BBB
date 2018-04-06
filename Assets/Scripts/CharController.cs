@@ -38,7 +38,7 @@ public class CharController : MonoBehaviour {
 			Instantiate (skill1Bullet, bulletpos, Quaternion.identity);
 		}
 
-		Debug.Log (isGrounded);
+		//Debug.Log (isGrounded);
 	}
 
 	void OnCollisionEnter(Collision other){

@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		Time.timeScale = 1;
+		Time.timeScale = 0;
 	}
 
 }

@@ -7,6 +7,7 @@ public class AIBoss : MonoBehaviour {
 	private float x, z;
 	private Rigidbody boss;
 	private bool isGrounded;
+	public bool isSkill;
 
 	private Collider skill1Trigger;
 	private Animator anim;
@@ -20,25 +21,25 @@ public class AIBoss : MonoBehaviour {
 	void Start () {
 		boss = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
+		anim.SetBool ("isRun",true);
+		InvokeRepeating ("skill1", 10, 30);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		moveToPlayer ();
-
-		if (Input.GetKeyDown ("f1")) {
-			anim.SetBool ("isSlam", true);
-		}
-
+		Debug.Log (isSkill);
+		if(!isSkill)
+			moveToPlayer ();
 	
 	}
 
 	void moveToPlayer(){
 		Vector3 targetPos = new Vector3(target.position.x-transform.position.x, 0, target.position.z-transform.position.z);
 		Quaternion toRot = Quaternion.LookRotation (targetPos);
+		//toRot = Quaternion.Euler (0, toRot.y, 0);
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, toRot, turnSpeed * Time.deltaTime);
 
-		transform.Translate(0, 0, Time.deltaTime * speed);
+
 	}
 
 	void OnCollisionEnter(Collision other){
@@ -49,9 +50,14 @@ public class AIBoss : MonoBehaviour {
 	void jump(){
 		boss.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 	}
+		
+	void skill1(){
+		isSkill = true;
+		anim.SetBool ("isSlam", true);
+	}
 
-	public void skill1(){
-		Debug.Log ("Skill 1");
+	void skill1s(){
 		GetComponentInChildren<Skill1Boss> ().skill1 ();
 	}
+
 }

@@ -11,7 +11,8 @@ public class BulletControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		transform.LookAt(GameObject.Find("Boss").GetComponent<Transform>());
+		Vector3 bossPos = new Vector3 (GameObject.Find ("Roshan").GetComponent<Transform> ().position.x, 10, GameObject.Find("Roshan").GetComponent<Transform>().position.z);
+		transform.LookAt(bossPos);
 		transform.Translate(0, 0, Time.deltaTime * 25);
 	}
 

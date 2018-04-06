@@ -9,9 +9,6 @@ public class CameraController : MonoBehaviour {
 
 	void Start () 
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
-
 		transform.position = player.transform.position + new Vector3(0,2f,-5.5f);
 		offset = player.transform.position - transform.position;
 	

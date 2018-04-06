@@ -28162,10 +28162,9 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.625
-    functionName: skill1
+    functionName: skill1s
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 9d2ae4d6d92dd6940995741c5b5a9a8f,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
