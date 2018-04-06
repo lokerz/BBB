@@ -51,9 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\UnityFBXExporter\FBXExporter.cs" />
-     <Compile Include="Assets\Packages\UnityFBXExporter\FBXUnityMaterialGetter.cs" />
-     <Compile Include="Assets\Packages\UnityFBXExporter\FBXUnityMeshGetter.cs" />
      <Compile Include="Assets\Scripts\AIBoss.cs" />
      <Compile Include="Assets\Scripts\BulletControl.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
