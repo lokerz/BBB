@@ -27,7 +27,7 @@ public class AIBoss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		Debug.Log (isSkill);
+			
 		if(!isSkill)
 			moveToPlayer ();
 	

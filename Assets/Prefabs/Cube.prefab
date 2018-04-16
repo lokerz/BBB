@@ -105,5 +105,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355b0d6126748ec48abb92220dd6e2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapJumpTime: 5
+  trapJumpTime: 10
   isDown: 0

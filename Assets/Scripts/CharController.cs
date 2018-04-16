@@ -40,7 +40,7 @@ public class CharController : MonoBehaviour {
 
 		//Debug.Log (isGrounded);
 	}
-
+	/*
 	void OnCollisionEnter(Collision other){
 		if(other.collider.tag == "Floor")
 			isGrounded = true;
@@ -50,7 +50,19 @@ public class CharController : MonoBehaviour {
 		if(other.tag == "Floor")
 			isGrounded = false;
 	}
-
+	*/
+	void OnTriggerEnter(Collider other){
+		if (other.tag == "Floor")
+			isGrounded = true;
+	}
+	void OnTriggerStay(Collider other){
+		if (other.tag == "Floor")
+			isGrounded = true;
+	}
+	void OnTriggerExit(Collider other){
+		if (other.tag == "Floor")
+			isGrounded = false;
+	}
 
 
 }

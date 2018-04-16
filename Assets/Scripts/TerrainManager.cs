@@ -60,11 +60,13 @@ public class TerrainManager : MonoBehaviour {
 				x = -i + (boxLength * k); //-50 50 , -100 100, -150 150; -100 0
 				y = height[Random.Range(0,height.Count)];
 				terrains.Add(Instantiate (floor,new Vector3(x,y,z), transform.rotation));
+				if (y > 0)
+					terrains [(j+1) * (k+1) - 1].tag = "Tower";
 				n++;
 			}
 			z = -i+(boxLength * j);
 		}
-		Debug.Log (n);
+
 	}
 
 	public void randomize(){
