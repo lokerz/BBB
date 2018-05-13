@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Boss
   - Tower
+  - HitBox
+  - Sword
   layers:
   - Default
   - TransparentFX

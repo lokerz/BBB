@@ -28162,7 +28162,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.625
-    functionName: skill1s
+    functionName: skill1Shortcut
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
