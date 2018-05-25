@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour {
 
-	private float x, z;
+	private float x, z, rotY;
 	private Rigidbody player;
 	private float timer;
 	public bool isGrounded = false;
 
 
 	public float speed;
+	public float turnSpeed;
 	public float jumpForce;
 	public GameObject skill1Bullet;
 
@@ -26,6 +27,9 @@ public class CharController : MonoBehaviour {
 		x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 		z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 		transform.Translate(x, 0, z);
+
+		rotY = Input.GetAxis ("Mouse X");
+		transform.Rotate (0, rotY*turnSpeed, 0);
 
 		//Jump
 		if (Input.GetKeyDown ("space") && isGrounded) {
