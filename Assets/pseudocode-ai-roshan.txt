@@ -1,0 +1,55 @@
+while hp > 75%		//hp dari 76 - 100
+	kejar player;
+	if kekejar dalam x detik 
+		pukul
+	else 
+		shockwave
+	endif
+endloop
+
+while hp > 50% 		//hp dari 51 - 75
+	kejar player
+	if kekejar dalam y detik (y < x)
+		pukul
+	else
+		rush (lari cepat) ke player selama z detik (z < y)
+		if kekejar dalam z detik (z < y)
+			pukul
+		else
+			shockwave
+		endif
+	endif
+endloop
+
+while hp > 25% 		//hp dari 26 - 50
+	rush ke player selama z detik
+	if kekejar dalam z detik
+		pukul bertubi - tubi (3 kali)
+	else
+		if jarak medium
+			shockwave
+		else if jarak jauh
+			tembak
+		else
+			break
+		endif
+	endif
+endloop
+
+while !dead
+	tembak
+	tembak
+	tembak
+	do
+		rush ke player selama z detik
+		if kekejar dalam z detik
+			pukul bertubi tubi
+		else if ga kekejar dan jarak medium
+			shockwave
+		endif
+	while jarak enemy <= medium
+endloop
+		
+	
+		
+
