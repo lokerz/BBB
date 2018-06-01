@@ -51,9 +51,9 @@ public class Skill1Boss : MonoBehaviour {
 			other.GetComponent<TerrainMovement> ().boxUp ();
 		if (other.tag == "Hero" && heroBlasted == false && other.transform.position.y < 3) {
 			heroBlasted = true;
-            hero.DamageCalculate(damage);
-			other.GetComponent<Rigidbody> ().AddForce (Vector3.up * 700, ForceMode.Impulse);
-			other.GetComponent<Rigidbody> ().AddForce ((gameObject.transform.position - other.transform.position).normalized * -300, ForceMode.Impulse);
+            //hero.DamageCalculate(damage);
+			other.GetComponent<Rigidbody> ().AddForce (Vector3.up * 750, ForceMode.Impulse);
+			other.GetComponent<Rigidbody> ().AddForce ((gameObject.transform.position - other.transform.position).normalized * -500, ForceMode.Impulse);
 		}
 	}
 

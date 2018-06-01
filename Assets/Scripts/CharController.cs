@@ -14,11 +14,12 @@ public class CharController : MonoBehaviour {
 	public float turnSpeed;
 	public float jumpForce;
 	public GameObject skill1Bullet;
-
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
-		player = gameObject.GetComponent<Rigidbody> ();
+		anim = GetComponent<Animator> ();
+		player = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +28,13 @@ public class CharController : MonoBehaviour {
 		x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 		z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 		transform.Translate(x, 0, z);
-
+		if (Input.GetAxis ("Horizontal")!= 0 | Input.GetAxis ("Vertical") != 0) {
+			anim.SetBool ("isRun", true);
+			anim.SetBool ("isIdle", false);
+		} else {
+			anim.SetBool ("isRun", false);
+			anim.SetBool ("isIdle", true);
+		}
 		rotY = Input.GetAxis ("Mouse X");
 		transform.Rotate (0, rotY*turnSpeed, 0);
 
@@ -42,6 +49,10 @@ public class CharController : MonoBehaviour {
 			Instantiate (skill1Bullet, bulletpos, Quaternion.identity);
 		}
 
+		if (Input.GetMouseButtonDown (0)) {
+			//anim.SetBool ("isAttack",true);
+			anim.SetTrigger("Attack");
+		}
 		//Debug.Log (isGrounded);
 	}
 	/*
@@ -55,6 +66,10 @@ public class CharController : MonoBehaviour {
 			isGrounded = false;
 	}
 	*/
+	public void ResetAttack(){
+		anim.SetBool ("isAttack", false);
+	}
+
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Floor")
 			isGrounded = true;
