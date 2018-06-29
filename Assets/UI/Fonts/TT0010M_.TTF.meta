@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c1cf830c36c20d44da6d9c6a4c4eb35f
+timeCreated: 1530258583
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Swis721 Cn BT
+  fontNames:
+  - Swis721 Cn BT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 813de49ccdae89b4f873802adb30b2c6, type: 3}
+  - {fileID: 12800000, guid: aca5748e5f1038042b727aa31a6ac6df, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
