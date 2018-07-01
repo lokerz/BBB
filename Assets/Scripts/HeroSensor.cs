@@ -15,13 +15,13 @@ public class HeroSensor : MonoBehaviour {
 		if (other.tag == "Hero") {
 			GetComponentInParent<Animator> ().SetBool ("isRun", false);
 			GetComponentInParent<Animator> ().SetBool ("isIdle", true);
-			//GetComponentInParent<Animator> ().SetBool ("isAttack1", true);
+			GetComponentInParent<Animator> ().SetTrigger ("Attack");
 		}
 	}
 
 	void OnTriggerExit(Collider other){
 		if (other.tag == "Hero") {
-			//GetComponentInParent<Animator>().SetBool ("isAttack1", false);
+			GetComponentInParent<Animator>().ResetTrigger ("Attack");
 			GetComponentInParent<Animator> ().SetBool ("isIdle", false);
 			GetComponentInParent<Animator> ().SetBool ("isRun", true);
 		}

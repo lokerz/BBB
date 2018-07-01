@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Skill1Boss : MonoBehaviour {
 	private bool skill1TriggerExpand = false;
-    private float damage;
+    //private float damage;
     public bool heroBlasted = false;
     public bool isReady = true;
     public int cooldownTime;
 
-    private Hero hero;
-	//public Animator anim;
 	// Use this for initialization
     void Start()
     {
-        hero = GameObject.Find("HeroCube").GetComponent<Hero>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(isReady);
+        
 		if (skill1TriggerExpand) {
 			if (GetComponent<SphereCollider> ().radius <= 5)
 				GetComponent<SphereCollider> ().radius += 1 * Time.deltaTime;
@@ -37,7 +34,6 @@ public class Skill1Boss : MonoBehaviour {
         //Ground Smash Attack
         if (isReady)
         {
-            damage = attack;
             isReady = false;
             StartCoroutine("Cooldown");
             gameObject.GetComponent<SphereCollider>().enabled = true;
@@ -52,8 +48,8 @@ public class Skill1Boss : MonoBehaviour {
 		if (other.tag == "Hero" && heroBlasted == false && other.transform.position.y < 3) {
 			heroBlasted = true;
             //hero.DamageCalculate(damage);
-			other.GetComponent<Rigidbody> ().AddForce (Vector3.up * 750, ForceMode.Impulse);
-			other.GetComponent<Rigidbody> ().AddForce ((gameObject.transform.position - other.transform.position).normalized * -500, ForceMode.Impulse);
+			other.GetComponent<Rigidbody> ().AddForce (Vector3.up * 1200, ForceMode.Impulse);
+			other.GetComponent<Rigidbody> ().AddForce ((gameObject.transform.position - other.transform.position).normalized * -1200, ForceMode.Impulse);
 		}
 	}
 

@@ -10,6 +10,8 @@ TagManager:
   - Tower
   - HitBox
   - Sword
+  - Claw
+  - Trigger
   layers:
   - Default
   - TransparentFX
